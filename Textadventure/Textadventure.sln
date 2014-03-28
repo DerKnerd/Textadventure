@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Textadventure", "Textadventure\Textadventure.vcxproj", "{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}.Debug|Win32.Build.0 = Debug|Win32
+		{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}.Release|Win32.ActiveCfg = Release|Win32
+		{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
