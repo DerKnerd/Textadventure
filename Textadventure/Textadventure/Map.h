@@ -1,8 +1,8 @@
+#pragma once
 #include "stdafx.h";
 #define HEIGHT 16
 #define WIDTH 16
 
-#pragma once
 enum MoveDirection {
 	Up,
 	Down,
@@ -14,7 +14,7 @@ class Map
 {
 private:
 	string data;
-	string mapdata[HEIGHT][WIDTH];
+	string mapdata[WIDTH][HEIGHT];
 
 	int verticalpos;
 	int horizontalpos;
@@ -29,6 +29,7 @@ public:
 
 	string GetData(void);
 	void Parse(void);
+	void DrawMap();
 
 	void Move(MoveDirection direction);
 };

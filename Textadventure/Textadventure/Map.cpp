@@ -32,9 +32,9 @@ void Map::Parse(void) {
 
 	auto currentitem = string();
 
-	for (int i = 0; i < HEIGHT; i++) {
+	for (int i = 0; i < WIDTH; i++) {
 		getline(datastream, currentline);
-		for (int j = 0; j < WIDTH; j++) {
+		for (int j = 0; j < HEIGHT; j++) {
 			currentitem = currentline.substr(0, currentline.find(";"));
 			this->mapdata[i][j] = currentitem;
 			currentline.erase(0, currentline.find(";") + 1);
@@ -53,6 +53,7 @@ void Map::Move(MoveDirection direction) {
 	case ::Down: MoveDown();
 		break;
 	}
+	DrawMap();
 }
 
 void Map::MoveLeft() {
@@ -104,5 +105,19 @@ void Map::MoveDown() {
 		} else {
 			cout << CANTPASSWALLS << endl;
 		}
+	}
+}
+
+void Map::DrawMap() {
+	system("cls");
+	for (int i = 0; i < WIDTH; i++) {
+		for (int j = 0; j < HEIGHT; j++) {
+			if (horizontalpos == j && verticalpos == i) {
+				cout << "P";
+			} else {
+				cout << mapdata[i][j];
+			}
+		}
+		cout << endl;
 	}
 }
