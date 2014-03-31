@@ -25,6 +25,8 @@ int main(int argc, _TCHAR* argv[])
 	map.Parse();
 
 	cout << "Let the game begin" << endl;
+	system("cls");
+
 	map.DrawMap();
 
 	auto exit = false;

@@ -5,3 +5,8 @@
 #define MOVEDRIGHT "One step to the right"
 #define MOVEDUP "One step to up"
 #define MOVEDDOWN "One step to down"
+#define HOWTOMOVE "\tYou play the game with the arrowkeys to move"
+#define HOWTOEXIT "\tYou can exit the game with the escape key"
+#define WHOAREYOU "\tYou are the P in the game"
+#define WHATAREWALLS "\tw are walls, which you can't pass"
+#define WHATAREENEMIES "\te are enemies, you can fight them when you step on them"

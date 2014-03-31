@@ -1,5 +1,6 @@
-#include "Map.h"
-
+#include "stdafx.h"
+#include "Map.h";
+#include "Fight.h";
 
 int random(int range_min, int range_max) {
 	return (int)rand() / (RAND_MAX + 1) * (range_max - range_min) + range_min;
@@ -58,58 +59,89 @@ void Map::Move(MoveDirection direction) {
 
 void Map::MoveLeft() {
 	if (horizontalpos == 0) {
+#if _DEBUG
 		cout << ATTHEBORDER << endl;
+#endif
 	} else {
 		if (mapdata[verticalpos][horizontalpos - 1] != "w") {
 			horizontalpos--;
+#if _DEBUG
 			cout << MOVEDLEFT << endl;
+#endif
 		} else {
+#if _DEBUG
 			cout << CANTPASSWALLS << endl;
+#endif
 		}
 	}
 }
 
 void Map::MoveUp() {
 	if (verticalpos == 0) {
+#if _DEBUG
 		cout << ATTHEBORDER << endl;
+#endif
 	} else {
 		if (mapdata[verticalpos - 1][horizontalpos] != "w") {
 			verticalpos--;
+#if _DEBUG
 			cout << MOVEDUP << endl;
+#endif
 		} else {
+#if _DEBUG
 			cout << CANTPASSWALLS << endl;
+#endif
 		}
 	}
 }
 
 void Map::MoveRight() {
 	if (horizontalpos == WIDTH - 1) {
+#if _DEBUG
 		cout << ATTHEBORDER << endl;
+#endif
 	} else {
 		if (mapdata[verticalpos][horizontalpos + 1] != "w") {
 			horizontalpos++;
+#if _DEBUG
 			cout << MOVEDRIGHT << endl;
+#endif
 		} else {
+#if _DEBUG
 			cout << CANTPASSWALLS << endl;
+#endif
 		}
 	}
 }
 
 void Map::MoveDown() {
 	if (verticalpos == HEIGHT - 1) {
+#if _DEBUG
 		cout << ATTHEBORDER << endl;
+#endif
 	} else {
 		if (mapdata[verticalpos + 1][horizontalpos] != "w") {
 			verticalpos++;
+#if _DEBUG
 			cout << MOVEDDOWN << endl;
+#endif
 		} else {
+#if _DEBUG
 			cout << CANTPASSWALLS << endl;
+#endif
 		}
 	}
 }
 
 void Map::DrawMap() {
-	system("cls");
+	COORD cur = {0, 0};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
+	cout << endl << endl;
+	if (mapdata[verticalpos][horizontalpos] == "e") {
+		auto fight = Fight(this);
+		fight.Start();
+		return;
+	}
 	for (int i = 0; i < WIDTH; i++) {
 		for (int j = 0; j < HEIGHT; j++) {
 			if (horizontalpos == j && verticalpos == i) {
@@ -117,6 +149,17 @@ void Map::DrawMap() {
 			} else {
 				cout << mapdata[i][j];
 			}
+		}
+		if (i == 4) {
+			cout << HOWTOMOVE;
+		} else if (i == 5) {
+			cout << HOWTOEXIT;
+		} else if (i == 6) {
+			cout << WHOAREYOU;
+		} else if (i == 7) {
+			cout << WHATAREWALLS;
+		} else if (i == 8) {
+			cout << WHATAREENEMIES;
 		}
 		cout << endl;
 	}
