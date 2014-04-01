@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Textadventure", "Textadventure\Textadventure.vcxproj", "{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Textventure", "Textventure\Textventure.vcxproj", "{C0B6D8AE-997D-4D12-A73D-5F71E79435F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
