@@ -18,6 +18,8 @@
 #include <sstream>
 #include <Windows.h>
 #include <random>
+#include <io.h>
+#include <fcntl.h>
 
 #include "Messages.h"
 
