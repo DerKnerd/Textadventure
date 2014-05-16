@@ -1,6 +1,5 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Map.h"
-#include "Fight.h"
 
 int random(int range_min, int range_max) {
 	return (int)rand() / (RAND_MAX + 1) * (range_max - range_min) + range_min;
@@ -41,20 +40,6 @@ void Map::Parse(void) {
 			currentline.erase(0, currentline.find(L";") + 1);
 		}
 	}
-}
-
-void Map::Move(MoveDirection direction) {
-	switch (direction) {
-	case ::Right: MoveRight();
-		break;
-	case ::Left: MoveLeft();
-		break;
-	case ::Up: MoveUp();
-		break;
-	case ::Down: MoveDown();
-		break;
-	}
-	DrawMap();
 }
 
 void Map::MoveLeft() {
@@ -130,37 +115,5 @@ void Map::MoveDown() {
 			wcout << CANTPASSWALLS << endl;
 #endif
 		}
-	}
-}
-
-void Map::DrawMap() {
-	COORD cur = {0, 0};
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
-	wcout << endl << endl;
-	if (mapdata[verticalpos][horizontalpos] == L"e") {
-		auto fight = Fight(this);
-		fight.Start();
-		return;
-	}
-	for (int i = 0; i < WIDTH; i++) {
-		for (int j = 0; j < HEIGHT; j++) {
-			if (horizontalpos == j && verticalpos == i) {
-				wcout << L"P";
-			} else {
-				wcout << mapdata[i][j];
-			}
-		}
-		if (i == 4) {
-			wcout << HOWTOMOVE;
-		} else if (i == 5) {
-			wcout << HOWTOEXIT;
-		} else if (i == 6) {
-			wcout << WHOAREYOU;
-		} else if (i == 7) {
-			wcout << WHATAREWALLS;
-		} else if (i == 8) {
-			wcout << WHATAREENEMIES;
-		}
-		wcout << endl;
 	}
 }

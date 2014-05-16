@@ -1,25 +1,23 @@
 #pragma once
-#ifndef FightH
-#define FightH
+
 class Fight
 {
+  friend class Adventure;
 private:
-	Map* map;
-	short enemyStrength;
+  short enemyStrength;
   short enemyStrengthLeft;
-	short enemyAttack;
-	
+  short enemyAttack;
+
   short myStrength;
   short myStrengthLeft;
-	short myAttack;
+  short myAttack;
 
+  bool won = false;
 public:
-	void Start();
-  virtual virtual void DrawFightplace();
-	void Attack();
-	void Exit();
+  void DrawFightplace();
+  void Attack();
+  void Block();
 
-	Fight(Map* map);
-	~Fight(void);
+  Fight(void);
+  ~Fight(void);
 };
-#endif
