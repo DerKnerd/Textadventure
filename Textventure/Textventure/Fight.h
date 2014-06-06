@@ -1,9 +1,12 @@
 #pragma once
+#include "stdafx.h"
 
 class Fight
 {
   friend class Adventure;
 private:
+  mt19937 eng;
+
   short enemyStrength;
   short enemyStrengthLeft;
   short enemyAttack;
@@ -13,6 +16,10 @@ private:
   short myAttack;
 
   bool won = false;
+  bool block = false;
+  bool enemyBlock = false;
+
+  void EnemyAttack();
 public:
   void DrawFightplace();
   void Attack();
