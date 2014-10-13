@@ -14,17 +14,17 @@ enum MoveDirection {
 
 class Map
 {
-  friend class Adventure;
+	friend class Adventure;
 
 private:
-  wstring data;
+	wstring data;
 
-  wstring mapdata[WIDTH][HEIGHT];
+	wstring mapdata[WIDTH][HEIGHT];
 
 	int verticalpos;
-  int horizontalpos;
-  int oldverticalpos;
-  int oldhorizontalpos;
+	int horizontalpos;
+	int oldverticalpos;
+	int oldhorizontalpos;
 
 protected:
 	void MoveLeft();
@@ -34,8 +34,8 @@ protected:
 public:
 	Map(wstring path = L"");
 	~Map(void);
-  	
-  wstring GetData(void);
+
+	wstring GetData(void);
 
 	void Parse(void);
 };

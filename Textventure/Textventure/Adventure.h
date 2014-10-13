@@ -5,8 +5,8 @@
 
 enum AdventureSituation
 {
-  Fighting,
-  Walking
+	Fighting,
+	Walking
 };
 
 class Adventure
@@ -14,19 +14,18 @@ class Adventure
 private:
 
 public:
-  Adventure(wstring path);
-  ~Adventure();
+	Adventure(wstring path);
+	~Adventure();
 
-  Map* CurrentMap;
-  Fight* CurrentFight;
+	Map* CurrentMap;
+	Fight* CurrentFight;
 
-  AdventureSituation CurrentSituation;
+	AdventureSituation CurrentSituation;
 
-  void StartFight();
-  void ExitFight();
-  void LooseFight();
-  void DrawMap();
+	void StartFight();
+	void ExitFight();
+	void LooseFight();
+	void DrawMap();
 
-  void Move(MoveDirection direction);
+	void Move(MoveDirection direction);
 };
-
