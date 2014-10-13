@@ -14,13 +14,11 @@ void Fight::DrawFightplace() {
 		system("cls");
 		wcout << L"\r\n";
 		wcout << L"Congrats, you won :)" << endl;
-	}
-	else if (this->myStrengthLeft <= 0) {
+	} else if (this->myStrengthLeft <= 0) {
 		system("cls");
 		wcout << L"\r\n";
 		wcout << L"Sorry, you lost :(" << endl;
-	}
-	else {
+	} else {
 		COORD cur = { 0, 0 };
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 		wcout << L"[enemy " << (enemyBlock ? L"blocks" : L"attacks") << L"]             ";
@@ -72,8 +70,7 @@ void Fight::EnemyAttack() {
 				this->myStrengthLeft -= this->enemyAttack;
 			}
 		}
-	}
-	else {
+	} else {
 		enemyBlock = true;
 	}
 	DrawFightplace();

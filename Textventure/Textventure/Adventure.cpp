@@ -66,8 +66,7 @@ void Adventure::DrawMap() {
 	if (CurrentMap->mapdata[CurrentMap->verticalpos][CurrentMap->horizontalpos] == L"e") {
 		StartFight();
 		return;
-	}
-	else {
+	} else {
 		CurrentMap->oldhorizontalpos = CurrentMap->horizontalpos;
 		CurrentMap->oldverticalpos = CurrentMap->verticalpos;
 	}
@@ -75,24 +74,19 @@ void Adventure::DrawMap() {
 		for (int j = 0; j < HEIGHT; j++) {
 			if (CurrentMap->horizontalpos == j && CurrentMap->verticalpos == i) {
 				wcout << L"P";
-			}
-			else {
+			} else {
 				wcout << CurrentMap->mapdata[i][j];
 			}
 		}
 		if (i == 4) {
 			wcout << HOWTOMOVE;
-		}
-		else if (i == 5) {
+		} else if (i == 5) {
 			wcout << HOWTOEXIT;
-		}
-		else if (i == 6) {
+		} else if (i == 6) {
 			wcout << WHOAREYOU;
-		}
-		else if (i == 7) {
+		} else if (i == 7) {
 			wcout << WHATAREWALLS;
-		}
-		else if (i == 8) {
+		} else if (i == 8) {
 			wcout << WHATAREENEMIES;
 		}
 		wcout << endl;

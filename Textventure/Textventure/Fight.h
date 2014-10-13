@@ -1,8 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-class Fight
-{
+class Fight {
 	friend class Adventure;
 private:
 	mt19937 eng;

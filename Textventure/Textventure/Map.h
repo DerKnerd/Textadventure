@@ -12,8 +12,7 @@ enum MoveDirection {
 	Right
 };
 
-class Map
-{
+class Map {
 	friend class Adventure;
 
 private:

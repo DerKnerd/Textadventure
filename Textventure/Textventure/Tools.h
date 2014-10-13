@@ -1,6 +1,5 @@
 #include "stdafx.h"
-class Console
-{
+class Console {
 public:
 	static void WriteLine(wchar_t* message);
 

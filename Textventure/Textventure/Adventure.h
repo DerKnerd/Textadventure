@@ -3,14 +3,12 @@
 #include "Fight.h"
 #include "Map.h"
 
-enum AdventureSituation
-{
+enum AdventureSituation {
 	Fighting,
 	Walking
 };
 
-class Adventure
-{
+class Adventure {
 private:
 
 public:

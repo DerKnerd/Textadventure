@@ -4,8 +4,7 @@
 #include "stdafx.h"
 #include "Adventure.h"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	char* locale = setlocale(LC_ALL, "German"); // Get the CRT's current locale.
 	std::locale lollocale(locale);
 	setlocale(LC_ALL, locale); // Restore the CRT.

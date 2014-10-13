@@ -5,8 +5,7 @@ int random(int range_min, int range_max) {
 	return (int)rand() / (RAND_MAX + 1) * (range_max - range_min) + range_min;
 }
 
-Map::~Map(void)
-{
+Map::~Map(void) {
 }
 
 Map::Map(wstring path) {
@@ -47,15 +46,13 @@ void Map::MoveLeft() {
 #if _DEBUG
 		wcout << ATTHEBORDER << endl;
 #endif
-	}
-	else {
+	} else {
 		if (mapdata[verticalpos][horizontalpos - 1] != L"w") {
 			horizontalpos--;
 #if _DEBUG
 			wcout << MOVEDLEFT << endl;
 #endif
-		}
-		else {
+		} else {
 #if _DEBUG
 			wcout << CANTPASSWALLS << endl;
 #endif
@@ -68,15 +65,13 @@ void Map::MoveUp() {
 #if _DEBUG
 		wcout << ATTHEBORDER << endl;
 #endif
-	}
-	else {
+	} else {
 		if (mapdata[verticalpos - 1][horizontalpos] != L"w") {
 			verticalpos--;
 #if _DEBUG
 			wcout << MOVEDUP << endl;
 #endif
-		}
-		else {
+		} else {
 #if _DEBUG
 			wcout << CANTPASSWALLS << endl;
 #endif
@@ -89,15 +84,13 @@ void Map::MoveRight() {
 #if _DEBUG
 		wcout << ATTHEBORDER << endl;
 #endif
-	}
-	else {
+	} else {
 		if (mapdata[verticalpos][horizontalpos + 1] != L"w") {
 			horizontalpos++;
 #if _DEBUG
 			wcout << MOVEDRIGHT << endl;
 #endif
-		}
-		else {
+		} else {
 #if _DEBUG
 			wcout << CANTPASSWALLS << endl;
 #endif
@@ -110,15 +103,13 @@ void Map::MoveDown() {
 #if _DEBUG
 		wcout << ATTHEBORDER << endl;
 #endif
-	}
-	else {
+	} else {
 		if (mapdata[verticalpos + 1][horizontalpos] != L"w") {
 			verticalpos++;
 #if _DEBUG
 			wcout << MOVEDDOWN << endl;
 #endif
-		}
-		else {
+		} else {
 #if _DEBUG
 			wcout << CANTPASSWALLS << endl;
 #endif
