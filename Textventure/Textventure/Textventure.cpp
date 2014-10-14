@@ -85,6 +85,12 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 			break;
+		default:
+			switch (key) {
+			case 27:
+				exit = true;
+				break;
+			}
 		}
 	}
 	return 0;

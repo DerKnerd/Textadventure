@@ -45,6 +45,11 @@ void Adventure::StartFight() {
 void Adventure::LooseFight() {
 	CurrentFight->won = false;
 	ExitFight();
+	if (lives >= 0) {
+		system("cls");
+		CurrentSituation = ::Losing;
+		wcout << SORRYYOULOSTTHEGAME << endl;
+	}
 }
 
 void Adventure::ExitFight() {
@@ -52,8 +57,10 @@ void Adventure::ExitFight() {
 	if (CurrentFight->GetStatus() == Lost) {
 		CurrentMap->horizontalpos = CurrentMap->oldhorizontalpos;
 		CurrentMap->verticalpos = CurrentMap->oldverticalpos;
+		RemoveLive();
 	} else {
 		CurrentMap->DefeatEnemy();
+		AddLive();
 	}
 	DrawMap();
 	CurrentSituation = ::Walking;
@@ -61,9 +68,10 @@ void Adventure::ExitFight() {
 }
 
 void Adventure::DrawMap() {
+	auto monstercount = 0;
 	COORD cur = { 0, 0 };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
-	wcout << endl << endl;
+	wcout << endl << LIVESLEFT << endl << endl;
 	if (CurrentMap->mapdata[CurrentMap->verticalpos][CurrentMap->horizontalpos] == L"e") {
 		StartFight();
 		return;
@@ -77,6 +85,9 @@ void Adventure::DrawMap() {
 				wcout << L"P";
 			} else {
 				wcout << CurrentMap->mapdata[i][j];
+				if (CurrentMap->mapdata[i][j] == L"e") {
+					monstercount++;
+				}
 			}
 		}
 		if (i == 4) {
@@ -92,5 +103,18 @@ void Adventure::DrawMap() {
 		}
 		wcout << endl;
 	}
-	CurrentSituation = ::Walking;
+	if (monstercount == 0) {
+		CurrentSituation = ::Victory;
+		system("cls");
+		wcout << YOUWONTHEGAME << endl;
+	} else {
+		CurrentSituation = ::Walking;
+	}
+}
+
+void Adventure::AddLive() {
+	lives++;
+}
+void Adventure::RemoveLive() {
+	lives--;
 }

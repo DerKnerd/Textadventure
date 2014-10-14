@@ -5,11 +5,14 @@
 
 enum AdventureSituation {
 	Fighting,
-	Walking
+	Walking,
+	Losing,
+	Victory
 };
 
 class Adventure {
 private:
+	short lives = 5;
 
 public:
 	Adventure(wstring path);
@@ -24,6 +27,8 @@ public:
 	void ExitFight();
 	void LooseFight();
 	void DrawMap();
+	void AddLive();
+	void RemoveLive();
 
 	void Move(MoveDirection direction);
 };
