@@ -37,4 +37,5 @@ public:
 	wstring GetData(void);
 
 	void Parse(void);
+	void DefeatEnemy();
 };

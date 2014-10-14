@@ -25,7 +25,6 @@ void Adventure::StartFight() {
 	CurrentFight = new Fight();
 	CurrentFight->myStrength = 100;
 	CurrentFight->myStrengthLeft = 100;
-	auto null = NULL;
 
 	mt19937 eng((random_device()()));
 
@@ -50,9 +49,11 @@ void Adventure::LooseFight() {
 
 void Adventure::ExitFight() {
 	system("cls");
-	if (!CurrentFight->won) {
+	if (CurrentFight->GetStatus() == Lost) {
 		CurrentMap->horizontalpos = CurrentMap->oldhorizontalpos;
 		CurrentMap->verticalpos = CurrentMap->oldverticalpos;
+	} else {
+		CurrentMap->DefeatEnemy();
 	}
 	DrawMap();
 	CurrentSituation = ::Walking;

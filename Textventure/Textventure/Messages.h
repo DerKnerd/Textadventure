@@ -1,4 +1,5 @@
 #pragma once
+#define TEXTVENTURE L" _____          _                   _                  \r\n/__   \_____  _| |___   _____ _ __ | |_ _   _ _ __ ___ \r\n  / /\/ _ \ \/ / __\ \ / / _ \ '_ \| __| | | | '__/ _ \\r\n / / |  __/>  <| |_ \ V /  __/ | | | |_| |_| | | |  __/\r\n \/   \___/_/\_\\__| \_/ \___|_| |_|\__|\__,_|_|  \___|\r\n                                                       \r\n"
 #define CANTPASSWALLS L"You can't go in a wall"
 #define ATTHEBORDER L"You already reached the border"
 #define MOVEDLEFT L"One step to the left"
@@ -10,3 +11,6 @@
 #define WHOAREYOU L"\tYou are the P in the game"
 #define WHATAREWALLS L"\tw are walls, which you can't pass"
 #define WHATAREENEMIES L"\te are enemies, you can fight them when you step on them"
+#define GREATINGTEXT L"Welcome to"
+#define GOAL L"Your goal is to defeat all the enemies with the limited lives you have."
+#define GOODLUCK L"Good Luck! :)"

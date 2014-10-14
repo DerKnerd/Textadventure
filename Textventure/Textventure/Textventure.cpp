@@ -30,6 +30,18 @@ int main(int argc, char* argv[]) {
 	wcout << L"Let the game begin" << endl;
 	system("cls");
 
+	wcout << GREATINGTEXT << endl << endl;
+	wcout << L" _____          _                   _                  " << endl;
+	wcout << L"/__   \\_____  _| |___   _____ _ __ | |_ _   _ _ __ ___ " << endl;
+	wcout << L"  / /\\/ _ \\ \\/ / __\\ \\ / / _ \\ '_ \\| __| | | | '__/ _ \\" << endl;
+	wcout << L" / / |  __/>  <| |_ \\ V /  __/ | | | |_| |_| | | |  __/" << endl;
+	wcout << L" \\/   \\___/_/\\_\\\\__| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|" << endl;
+	wcout << L"                                                       " << endl << endl;
+	wcout << GOAL << endl << endl;
+	wcout << GOODLUCK << endl;
+	wcin.get();
+	system("cls");
+
 	currentAdventure.DrawMap();
 
 	auto exit = false;
@@ -59,7 +71,11 @@ int main(int argc, char* argv[]) {
 		case ::Fighting:
 			switch (key) {
 			case 27:
-				currentAdventure.LooseFight();
+				if (currentAdventure.CurrentFight->GetStatus() == Won) {
+					currentAdventure.ExitFight();
+				} else {
+					currentAdventure.LooseFight();
+				}
 				break;
 			case 97:
 				currentAdventure.CurrentFight->Attack();

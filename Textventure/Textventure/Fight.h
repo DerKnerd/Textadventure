@@ -1,6 +1,11 @@
 #pragma once
 #include "stdafx.h"
 
+enum FightStatus {
+	Won,
+	Lost
+};
+
 class Fight {
 	friend class Adventure;
 private:
@@ -23,6 +28,7 @@ public:
 	void DrawFightplace();
 	void Attack();
 	void Block();
+	FightStatus GetStatus();
 
 	Fight(void);
 	~Fight(void);

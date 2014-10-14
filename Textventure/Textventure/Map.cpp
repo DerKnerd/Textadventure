@@ -116,3 +116,7 @@ void Map::MoveDown() {
 		}
 	}
 }
+
+void Map::DefeatEnemy() {
+	mapdata[verticalpos][horizontalpos] = L"d";
+}
